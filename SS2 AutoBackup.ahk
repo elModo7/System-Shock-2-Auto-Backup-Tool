@@ -1,4 +1,11 @@
-﻿; You can combine this script with 7z for saving tons of disk space, examples in my GitHub (https://github.com/elModo7)
+﻿; Last changed date: 10/11/2025 19:14
+; OS Version ...: Windows 10 x64 and Above (Support not guaranteed on Windows 7)
+;@Ahk2Exe-SetName System Shock 2 Auto-backup Tool
+;@Ahk2Exe-SetDescription Automatic save history backup for SS2
+;@Ahk2Exe-SetVersion 0.1.0
+;@Ahk2Exe-SetCopyright Copyright (c) 2025`, elModo7 / VictorDevLog
+;@Ahk2Exe-SetOrigFilename SS2 AutoBackup.exe
+; You can combine this script with 7z for saving tons of disk space, examples in my GitHub (https://github.com/elModo7)
 version := "0.1"
 #NoEnv
 #Include <aboutScreen>
