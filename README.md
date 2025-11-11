@@ -15,6 +15,12 @@ Small, helper that **watches your System Shock 2 save folder** and, whenever a f
 
 ---
 
+## 📦 Running executable
+
+[Download from releases](https://github.com/elModo7/System-Shock-2-Auto-Backup-Tool/releases/download/0.1/System-Shock-2-Auto-Backup-Tool.zip), extract anywhere, edit the config and run `SS2 AutoBackup.exe`.
+
+---
+
 ## 🧰 Requirements
 
 - **Windows 7+**
@@ -23,7 +29,7 @@ Small, helper that **watches your System Shock 2 save folder** and, whenever a f
 
 ---
 
-## 📦 Installation
+## 📦 Installation from source
 
 1. Place `SS2 AutoBackup.ahk` anywhere
 2. Double-click the script to run it (or compile to EXE with Ahk2Exe if you prefer, you can also download latest version from releases).
