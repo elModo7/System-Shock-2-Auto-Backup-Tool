@@ -85,7 +85,7 @@ backupDelay=3000
 
 ---
 
-## 🧪 How it works (quick tour)
+## 🧪 How it works
 
 - `WatchFolder()` subscribes to change events (write/modify).
 - `watchFolderEvent()` collects changed file names, de-duplicates, and starts a timer.
@@ -95,18 +95,10 @@ backupDelay=3000
 
 Default watch flags come from:
 
-```ahk
+```autohotkey
 watch := calculateWatchIdentifier(0, 1, 0, 0, 1, 0, 0, 0) ; Files + Write
 ; subTree := 0 (non-recursive watcher), but the COPY itself is recursive.
 ```
-
----
-
-## 🧹 Housekeeping & limits
-
-- **Non-recursive watcher**: the event hook is non-recursive, but backups copy the whole folder tree. If your game writes only at the root, that’s fine; if it writes deeper, consider switching `subTree` to `1` in the script.
-- **One backup per burst**: rapid writes collapse into one backup per debounce window.
-- **Disk usage**: full copies can grow; see compression below.
 
 ---
 
@@ -114,7 +106,7 @@ watch := calculateWatchIdentifier(0, 1, 0, 0, 1, 0, 0, 0) ; Files + Write
 
 If you have `7z.exe` in PATH, you can compress each freshly created backup. For example, after `FileCopyDir`:
 
-```ahk
+```autohotkey
 ; After creating newFolderPath
 RunWait, %ComSpec% /c 7z a -t7z -mx=9 "%newFolderPath%.7z" "%newFolderPath%\*", , Hide
 ; Optionally delete the uncompressed folder after verifying the archive:
@@ -125,13 +117,6 @@ You can also add a simple retention policy (e.g., keep last N archives) if desir
 
 ---
 
-## 🪟 Start with Windows (optional)
-
-- Create a shortcut to the script (or compiled EXE).
-- Place it in `shell:startup` (Win+R → `shell:startup`) to launch on login.
-
----
-
 ## 🐛 Troubleshooting
 
 - **“Call of WatchFolder() failed!”**  
@@ -139,33 +124,33 @@ You can also add a simple retention policy (e.g., keep last N archives) if desir
 - **No backups created**  
   Double-check `watchedFolder` in `config.ini` and that the game is writing there.
 - **High disk usage**  
-  Increase `backupDelay` or enable 7-Zip compression / add retention.
+  Enable 7-Zip compression / add retention.
 
 ---
 
 ## 📜 License
 
-Add a `LICENSE` file (MIT is a good default if you’re unsure). Until then, treat this as “all rights reserved.”
+MIT
 
 ---
 
 ## 🙌 Credits
 
 - **WatchFolder** — file system watcher
-- **aboutScreen** — minimal About window
+- CustomFont
+- HasVal
+- GdipCreateFromBase64
 
 ---
 
-## 🗺️ Roadmap (nice-to-haves)
+## 🗺️ TO-DOs
 
 - Configurable **backup folder** path
-- **Recursive** watch toggle in `config.ini`
 - Built-in **compression** & **retention** settings
-- Tray shortcuts: **Open backups**, **Open watched folder**, **Open config**
 
 ---
 
-## 📁 Repository layout (suggested)
+## 📁 Repository layout
 
 ```
 SS2-AutoBackup/
@@ -174,3 +159,7 @@ SS2-AutoBackup/
 ├─ backups/              ; created at runtime
 └─ Lib/                  ; optional local copies of WatchFolder/aboutScreen
 ```
+
+
+
+> Most of this readme, although revised, was written by AI based on the main ahk script provided (because I am lazy and this is a free tool after all). You can contact me on Discord, make pull requests or create an issue if needed.
