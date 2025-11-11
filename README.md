@@ -8,7 +8,7 @@ Small, helper that **watches your System Shock 2 save folder** and, whenever a f
 
 ## ✨ Features
 
-- Watches a folder for file writes (via `WatchFolder` library)
+- Watches a folder for file writes
 - Debounces rapid changes with a configurable delay, then **copies the full save directory**
 - Saves backups to `./backups/YYYYMMDDHHMMSSmmm_save_0`
 - Tiny codebase, quick & easily extensible
@@ -25,10 +25,9 @@ Small, helper that **watches your System Shock 2 save folder** and, whenever a f
 
 ## 📦 Installation
 
-1. Place `SS2 AutoBackup.ahk` anywhere (e.g., next to your game).
-2. (Optional but recommended) Create a `config.ini` in the same folder as the script—see below.
-3. Double-click the script to run it (or compile to EXE with Ahk2Exe if you prefer, you can also download latest version from releases).
-4. You’ll see a tray icon; backups will appear under `./backups`.
+1. Place `SS2 AutoBackup.ahk` anywhere
+2. Double-click the script to run it (or compile to EXE with Ahk2Exe if you prefer, you can also download latest version from releases).
+3. You’ll see a tray icon; backups will appear under `./backups`.
 
 ---
 
